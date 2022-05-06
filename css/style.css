@@ -1,0 +1,67 @@
+
+body {
+    margin: 0;
+    background-color: rgb(208, 255, 239);
+}
+
+.main-game {
+    height: 100vh; /*viewport height*/
+    width: 100vw;  /*viewport width*/ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    font-family: fantasy;
+    font-size: 40px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    letter-spacing: 10px;
+}
+
+.genius {
+    display: grid; 
+    grid-template-areas: 'verde vermelho'
+    'amarelo azul';
+    grid-gap: 10px; /*Espaço entre cada área área do grid, entre as cores.*/
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 100%;
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.blue {
+    grid-area: azul; /*Aqui, Trabalhamos mais ferrenhamente com grids do css. Estamos linkando com o grid-template-areas.*/
+    background-color: blue;
+    border-bottom-right-radius: 100%; /*Aqui, pegamos uma parte da div e preenchemos especificamente com essa propriedade. A div se mesclou com o comportamento da classe .genius*/
+    
+}
+
+.red {
+    grid-area: vermelho;
+    background-color: red;
+    border-top-right-radius: 100%;
+}
+
+.yellow {
+    grid-area: amarelo;
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+}
+
+.green {
+    grid-area: verde;
+    background-color: green;
+    border-top-left-radius: 100%;
+}
+
+.selected {       /*O javascript vai recuperar essa classe para fazer o evento da cor mostrada ou 'brilhando'*/
+    opacity: 0.8;
+}
